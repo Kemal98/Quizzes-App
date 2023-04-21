@@ -51,9 +51,12 @@ const ListQuizzes = () => {
                 display="flex"
                 justifyContent="space-between"
                 alignItems="center"
-                onClick={() => quizClick(quiz.id)}
               >
-                <Stack p={3} sx={{ width: "100%" }}>
+                <Stack
+                  p={3}
+                  sx={{ width: "100%", cursor:"pointer" }}
+                  onClick={() => quizClick(quiz.id)}
+                >
                   <Typography
                     sx={{ mb: "0px", fontSize: { sm: "1.3rem" } }}
                     variant={"subtitle1"}
