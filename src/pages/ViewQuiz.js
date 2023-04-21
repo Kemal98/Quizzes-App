@@ -54,15 +54,7 @@ const ViewQuiz = () => {
               component="div"
               color="#808080"
             >
-              Question
-            </Typography>
-            <Typography
-              gutterBottom
-              variant="h6"
-              component="div"
-              color="#808080"
-            >
-              {currentQuestionIndex + 1}
+              Question {currentQuestionIndex + 1}
             </Typography>
           </Grid>
         </Grid>
@@ -74,31 +66,32 @@ const ViewQuiz = () => {
             }}
           >
             <QuizQuestion question={question} />
-            <Stack alignItems={{ xs: "center", sm: "flex-end" }} display="flex">
-              {index === quiz.questions.length - 1 ? (
-                <Link to={`/`}>
-                  <Button
-                    variant="outlined"
-                    sx={{
-                      fontSize: "0.7rem",
-                      color: "green",
-                      borderColor: "green",
-                    }}
-                    endIcon={<DoneIcon />}
-                  >
-                    Finish Quiz
-                  </Button>
-                </Link>
-              ) : (
+            <Stack alignItems={{xs:"center",sm:"flex-end"} }display="flex">
+            {index === quiz.questions.length - 1 ? (
+              <Link to={`/`}>
                 <Button
                   variant="outlined"
-                  sx={{ fontSize: "0.7rem" }}
-                  onClick={handleNextQuestion}
-                  endIcon={<NavigateNextIcon />}
+                  sx={{
+                    fontSize: "0.7rem",
+                    color: "green",
+                    borderColor: "green",
+                  }}
+                  endIcon={<DoneIcon />}
                 >
-                  Next Question
+                  Finish Quiz
                 </Button>
-              )}
+              </Link>
+            ) : (
+
+              <Button
+                variant="outlined"
+                sx={{ fontSize: "0.7rem" }}
+                onClick={handleNextQuestion}
+                endIcon={<NavigateNextIcon />}
+              >
+                Next Question
+              </Button>
+            )}
             </Stack>
           </div>
         ))}{" "}
