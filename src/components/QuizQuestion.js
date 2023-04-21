@@ -33,6 +33,7 @@ function QuizQuestion({ question }) {
             fontSize: "0.93rem",
             color: "#808080",
             letterSpacing: "1px",
+            textAlign: "center",
             mt: "10px",
             filter: !showAnswer && "blur(5px)",
           }}
