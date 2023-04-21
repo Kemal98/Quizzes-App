@@ -1,13 +1,38 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+*::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.484);
 }
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.app {
+  min-height: 98.5vh;
+  background-image: url(./image/ques1.png);
+  margin: 5px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5px;
+}
+
+
+.divider {
+  margin: 10px;
+  width: 100%;
+  background-color: grey;
+}
+
