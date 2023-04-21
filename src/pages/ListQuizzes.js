@@ -12,7 +12,11 @@ const ListQuizzes = () => {
   const dispatch = useDispatch();
 
   const quizzes = useSelector((state) => state.quizzesReducer.quizzes);
+  const { quizzesAarchive } = useSelector(
+    (state) => state.quizzesReducer
+  );
 
+// quizzesAarchive;
   const [open, setOpen] = useState(false);
 
   const [newQuiz, setNewQuiz] = useState({});

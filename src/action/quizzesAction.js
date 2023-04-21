@@ -6,7 +6,6 @@ export const uploadQuiz = (data) => async (dispatch) => {
   } catch (error) {
     dispatch({ type: "UPLOAD_FAIL" });
   }
-  console.log(data);
 };
 
 export const updateQuiz = (data) => async (dispatch) => {
@@ -17,11 +16,9 @@ export const updateQuiz = (data) => async (dispatch) => {
   } catch (error) {
     dispatch({ type: "UPDATE_FAIL" });
   }
-  console.log(data);
 };
 
 export const removeQuiz = (id) => async (dispatch) => {
-  console.log(id);
   try {
     dispatch({ type: "REMOVE_QUIZ", data: id });
   } catch (error) {

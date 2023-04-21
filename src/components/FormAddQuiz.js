@@ -6,6 +6,8 @@ import { uploadQuiz, uploadQuizAarchive } from "../action/quizzesAction";
 
 const FormAddQuiz = ({ open, setOpen }) => {
   const dispatch = useDispatch();
+
+  const archiveEmpty = ["There is no history quiz"];
   let archiveQuiz = useSelector(
     (state) => state.quizzesReducer.quizzesAarchive
   );
@@ -26,16 +28,16 @@ const FormAddQuiz = ({ open, setOpen }) => {
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState(false);
 
-  const archiveEmpty = ["There is no history quiz"];
-
   useEffect(() => {
+    if (question === "There is no history quiz") {
+       setQuestion("")
+    }
     setCurrentQuestion((prevState) => ({
       ...prevState,
       id: id,
       question: question,
       answer: answer,
     }));
-    console.log(currentQuestion);
   }, [question, answer]);
 
   const handleSubmitQuestion = (event) => {
@@ -51,7 +53,12 @@ const FormAddQuiz = ({ open, setOpen }) => {
       });
       setQuestion("");
       setAnswer("");
-      dispatch(uploadQuizAarchive(currentQuestion));
+
+      const duplicateArhive = archiveQuiz.find((a) => a.question === question);
+
+      if (!duplicateArhive) {
+        dispatch(uploadQuizAarchive(currentQuestion));
+      }
       setCurrentQuestion({ question: "", answer: "" });
     }
   };
