@@ -63,11 +63,11 @@ const ListQuizzes = () => {
                 </Stack>
 
                 <Stack
-                  direction="row"
+                  direction={{ xs: "column", sm: "row" }}
                   justifyContent="center"
                   alignItems="center"
                   spacing={2}
-                  p={3}
+                  p={2}
                   sx={{
                     borderLeft: "1px solid #B5B5B4",
                   }}
